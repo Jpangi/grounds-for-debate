@@ -2,12 +2,23 @@
 // ======= IMPORTS =======
 // =======================
 const dotenv = require("dotenv");
-dotenv.config(); //code that allows env variables
+dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
-const app = express(); // the express framework is in the app variable
+const app = express();
+const userRoutes = require("./routes/userRoutes");
+const requireAuth = require("./middleware/authMiddleware"); //protects routes
 
-// connection to the database code
+// ===========================
+// ======== MIDDLEWARE =======
+// ===========================
+app.use(express.json());
+
+app.use("/users", userRoutes);
+
+// ===========================
+// ====== DB CONNECTION ======
+// ===========================
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}`);

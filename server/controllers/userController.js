@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 //create a token function
 const createToken = (_id) => {
@@ -32,8 +32,10 @@ const signUp = async (req, res) => {
     });
     //runs the createToken function and passes in user._id
     const token = createToken(user._id);
+    console.log(token);
+    res.json({ message: "User Created and logged in", token, user });
   } catch (error) {
-    return res.json(400).json({ message: "Error with signup", error });
+    return res.status(400).json({ message: "Error with signup", error });
   }
 };
 
@@ -53,9 +55,13 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Password is incorrect" });
     //give it a token
     const token = createToken(user._id);
+    res.json({ token, user });
   } catch (error) {
     res.status(400).json({ error: error });
   }
 };
+
+/*--------SIGNOUT CONTROLLER--------*/
+// const signOut = async (req, res) => {};
 
 module.exports = { signUp, login };
