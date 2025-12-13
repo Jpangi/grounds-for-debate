@@ -31,7 +31,7 @@ const signUp = async (req, res) => {
       password: hashedPassword,
     });
     //runs the createToken function and passes in user._id
-    const token = createToken(user._id);
+    const token = createToken(user.id);
     console.log(token);
     res.json({ message: "User Created and logged in", token, user });
   } catch (error) {
@@ -60,8 +60,5 @@ const login = async (req, res) => {
     res.status(400).json({ error: error });
   }
 };
-
-/*--------SIGNOUT CONTROLLER--------*/
-// const signOut = async (req, res) => {};
 
 module.exports = { signUp, login };

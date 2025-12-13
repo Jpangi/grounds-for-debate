@@ -12,4 +12,4 @@ const requireAuth = (req, res, next) => {
   } catch (error) {}
 };
 
-module.exports = { requireAuth };
+module.exports = requireAuth;

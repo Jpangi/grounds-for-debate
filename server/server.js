@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const app = express();
 const userRoutes = require("./routes/userRoutes");
 const requireAuth = require("./middleware/authMiddleware"); //protects routes
+const coffeeBeanRoutes = require("./routes/coffeeBeanRoutes");
 
 // ===========================
 // ======== MIDDLEWARE =======
@@ -15,6 +16,7 @@ const requireAuth = require("./middleware/authMiddleware"); //protects routes
 app.use(express.json());
 
 app.use("/users", userRoutes);
+app.use("/coffee", requireAuth, coffeeBeanRoutes);
 
 // ===========================
 // ====== DB CONNECTION ======
