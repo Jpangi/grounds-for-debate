@@ -9,6 +9,7 @@ const app = express();
 const userRoutes = require("./routes/userRoutes");
 const requireAuth = require("./middleware/authMiddleware"); //protects routes
 const coffeeBeanRoutes = require("./routes/coffeeBeanRoutes");
+const publicCoffeeRoutes = require("./routes/publicCoffeeRoutes");
 
 // ===========================
 // ======== MIDDLEWARE =======
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use("/users", userRoutes);
 app.use("/coffee", requireAuth, coffeeBeanRoutes);
+app.use("/public", publicCoffeeRoutes);
 
 // ===========================
 // ====== DB CONNECTION ======
