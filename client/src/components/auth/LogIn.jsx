@@ -4,13 +4,11 @@ import axios from 'axios';
 import { BASEURL } from "../../services/contants";
 
 
-const SignUp = (props)=>{
-    //keeping track of sign up state
+const LogIn = (props)=>{
+    //keeping track of sign in state
     const [formData, setFormData] = useState({
         username:'',
-        email: "",
         password: '',
-        passwordTwo: '',
     })
 
     //handle change
@@ -27,7 +25,7 @@ const SignUp = (props)=>{
 
       try {
         //make a call to the backend to sign up
-        const res = await axios.post(`${BASEURL}users/signup`, formData);
+        const res = await axios.post(`${BASEURL}users/login`, formData);
         //logIn function is passed as a prop from the app.jsx page
         props.logIn(res.data.token);
         console.log('Submit succeeded')
@@ -38,28 +36,19 @@ const SignUp = (props)=>{
     };
 
     //form validation
-    const isFormInvalid = () => {
-      //any of the fields are blank
-      if (
-        !formData.username ||
-        !formData.email ||
-        !formData.password ||
-        !formData.passwordTwo
-      ) {
-        return true;
-
-        //if the passwords do not match
-      } else if (formData.password !== formData.passwordTwo) {
-        return true;
-      } else {
-        return false;
-      }
-    };
+    const isFormInValid = () => {
+        // any of the fields are blank
+        if (!formData.username || !formData.password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     console.log(formData);
 
     return (
       <main>
-        <h1>Sign Up</h1>
+        <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username:</label>
           <input
@@ -69,14 +58,7 @@ const SignUp = (props)=>{
             value={formData.username}
             onChange={handleChange}
           />
-          <label htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+
           <label htmlFor="password">Password:</label>
           <input
             id="password"
@@ -85,16 +67,8 @@ const SignUp = (props)=>{
             value={formData.password}
             onChange={handleChange}
           />
-          <label htmlFor="passwordTwo">Confirm Password:</label>
-          <input
-            id="passwordTwo"
-            type="password"
-            name="passwordTwo"
-            value={formData.passwordTwo}
-            onChange={handleChange}
-          />
           <div>
-            <button disabled={isFormInvalid()}>Sign Up</button>
+            <button disabled={isFormInValid()}>Sign In</button>
           </div>
         </form>
       </main>
@@ -103,4 +77,4 @@ const SignUp = (props)=>{
 
 
 }
-export default SignUp
+export default LogIn
