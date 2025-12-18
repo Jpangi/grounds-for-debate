@@ -3,8 +3,7 @@ import { Routes, Route } from 'react-router';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Navbar from './components/common/Navbar';
-import TopRated from './components/coffee/topRated';
-import AddCoffee from "./components/coffee/AddCoffee"
+import AddCoffee from './components/coffee/AddCoffee';
 
 
 function App() {
@@ -25,11 +24,11 @@ const logIn = (data) =>{
     <Navbar signOut={signOut} user={user} />
     <Routes>
          <Route path="/" element={<h2>Sign In Or Sign Up</h2>} />
-         <Route path="/topRated" element={<TopRated/>} />
+
         
         <Route path="/signup" element={<SignUp logIn={logIn} />} />
         <Route path="/login" element={<LogIn logIn={logIn} />} />
-        <Route path="/addCoffee" element={<AddCoffee logIn={logIn}/>} />
+        <Route path="/addCoffee" element={<AddCoffee user={user}/>} />
 
     </Routes>
 

@@ -1,89 +1,144 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { BASEURL } from "../../services/contants";
 
-const AddCoffee = (props) =>{
-const [coffee, setCoffee] = useState([])
+const AddCoffee = (props) => {
 
-useEffect(()=>{
-    fetchCoffee()
-}, [])
+  //Enums from CoffeeBean Model
+  const coffeeRoaster = [
+    "Counter Culture Coffee",
+    "Intelligentsia Coffee",
+    "Blue Bottle Coffee",
+    "Stumptown Coffee Roasters",
+    "Verve Coffee Roasters",
+    "Onyx Coffee Lab",
+    "Heart Coffee Roasters",
+    "Irving Farm Coffee Roasters",
+    "Paradise Roasters",
+    "Bird Rock Coffee Roasters",
+    "Novo Coffee",
+    "Devoción",
+    "Ritual Coffee Roasters",
+    "Madcap Coffee",
+    "JBC Coffee Roasters",
+    "Temple Coffee",
+    "La Colombe",
+    "Philz Coffee",
+    "Starbucks",
+    "Peet's Coffee",
+  ];
+  const region = [
+    "Africa",
+    "Asia",
+    "Central America",
+    "South America",
+    "Caribbean",
+  ];
+  const flavor_profile = [
+    "Fruity",
+    "Nutty",
+    "Chocolatey",
+    "Floral",
+    "Spicy",
+    "Earthy",
+  ];
+  const roast = ["Light", "Medium", "Medium-Dark", "Dark"];
+  const rating = [1, 2, 3, 4, 5];
 
-
-//function to get the addcoffee route and sets the coffee state to the data
-const fetchCoffee = async()=>{
-    try {
-        const res = await axios.get(`${BASEURL}/coffee/addCoffee`,{
-            headers: {
-                Authorization: `Bearer ${props.user}`
-            }
-        });
-        setCoffee(res.data)
-    } catch (error) {
-        console.log("fetchCoffee Error:",error)
-    }
-}
-
-const handleAdd = async (e)=>{
+  const handleAdd = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target)//put all the form data in the variable called 'formData'
-       const data = {
-            name: formData.get('name'),
-            description: formData.get('description'),
-            price: Number(formData.get('price')) ,
-            region:formData.get('region'),
-            weight:Number(formData.get('weight')),
-            flavor_profile:formData.get('flavor_profile'),
-            roast:formData.get('roast'),
-            rating:formData.get('rating'),
+    const formData = new FormData(e.target); //put all the form data in the variable called 'formData'
+    const data = {
+      name: formData.get("name"),
+      description: formData.get("description"),
+      price: Number(formData.get("price")),
+      region: formData.get("region"),
+      weight: Number(formData.get("weight")),
+      flavor_profile: formData.get("flavor_profile"),
+      roast: formData.get("roast"),
+      rating: formData.get("rating"),
+    };
+    
+    try {
+      const res = await axios.post(`${BASEURL}coffee/addCoffee`, data, {
+        headers: {
+          Authorization: `Bearer ${props.user}`,
+        },
+      });
+      console.log("Coffee added:", res.data);
+    } catch (error) {
+      console.log(`handleAdd Error:`, error);
+    }
+  };
 
-        }
-        try {
-                const res = await axios.post(`${BASEURL}/coffee/addCoffee`,{
-            headers: {
-                Authorization: `Bearer ${props.user}`
-            }
-        });
-        } catch (error) {
-            console.log(`handleAdd Error:`, error)
-        }
+  return (
+    <>
+      <section>
+        <h2>Add New Coffee Beans</h2>
+        <form onSubmit={handleAdd}>
+          <label htmlFor="name">Roaster: </label>
+          <select name="name" required>
+            <option value="">Select Coffee Roaster</option>
+            {coffeeRoaster.map((roaster) => (
+              <option key={roaster} value={roaster}>
+                {roaster}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="description">Description: </label>
+          <input type="text" name="description" />
+          <label htmlFor="price">Price: </label>
+          <input type="number" name="price" step="0.01" defaultValue={0} />
+          <label htmlFor="region">Region: </label>
+          <select name="region" required>
+            <option value="">Select Coffee Region</option>
+            {region.map((place) => (
+              <option key={place} value={place}>
+                {place}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="weight">Weight(oz): </label>
+          <input type="number" name="weight" defaultValue={0} />
 
-               <section>
-            <h2>Add New Todo</h2>
-            <form onSubmit={handleAdd} style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="description">Todo: </label>
-                <input
-                    type="text"
-                    name="description"
-                    defaultValue={''}
-                />
-                <label htmlFor="duration">Duration: </label>
-                <input
-                    type="number"
-                    name="duration"
-                    defaultValue={0}
-                />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <input
-                        style={{ margin: 0 }}
-                        type="checkbox"
-                        name="isComplete"
-                        id="isComplete"
-                        defaultChecked={false}
-                    />
-                    <label htmlFor="isComplete">Is Complete</label>
-                </div>
-                <div>
-                    <button type="submit">Add</button>
-                </div>
-            </form>
-        </section>
+          <label htmlFor="flavor_profile">Flavor: </label>
+          <select name="flavor_profile" required>
+            <option value="">Select Flavor</option>
+            {flavor_profile.map((flavor) => (
+              <option key={flavor} value={flavor}>
+                {flavor}
+              </option>
+            ))}
+          </select>
 
+          <label htmlFor="roast">Roast: </label>
+          <select name="roast" required>
+            <option value="">Select Roast</option>
+            {roast.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
 
-}
+          <label htmlFor="rating">Rating: </label>
+          <select name="rating" required>
+            <option value="">Select Rating</option>
+            {rating.map((rate) => (
+              <option key={rate} value={rate}>
+                {rate}
+              </option>
+            ))}
+          </select>
 
+          <div>
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </section>
+      ;
+    </>
+  );
+};
 
-
-
-
-}
+export default AddCoffee;
