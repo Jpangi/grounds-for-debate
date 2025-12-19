@@ -15,25 +15,24 @@ function TopRated() {
       try {
         const res = await axios.get(`${BASEURL}public/topRated`);
         setTopRated(res.data);
+        console.log("Top rated coffees:", res.data);
       } catch (err) {
         console.error(err);
       }
     };
-
+//in my map function you must use averageRating instead of rating and _id instead of name since that's what the variable is on the backend Aggregate method (publicCoffeeController)
   return (
-    <>
-    <h1>Top Rated</h1>
-    <section>
-      {topRated.map(favorite =>{
-        return (
-        <ul>
-          <li>{favorite.name}</li>
-        </ul>
-        )
-      })}
-   </section>
-    </>
-  )
+        <div>
+            <h2>Community Favorites</h2>
+            {topRated.map((coffee) => (
+                <div key={coffee._id}>
+                    <h3>{coffee._id}</h3>
+                    <p>Rating: {coffee.averageRating}</p>
+                    <p>Total Ratings: {coffee.totalRatings}</p>
+                </div>
+            ))}
+        </div>
+    );
 
 }
 
