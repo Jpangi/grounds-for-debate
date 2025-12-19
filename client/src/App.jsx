@@ -4,7 +4,8 @@ import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Navbar from './components/common/Navbar';
 import AddCoffee from './components/coffee/AddCoffee';
-
+import CoffeeList from './components/coffee/UserCoffeeList';
+import TopRated from './components/coffee/topRated';
 
 function App() {
 const [user, setUser] = useState(localStorage.getItem('token'))
@@ -23,12 +24,12 @@ const logIn = (data) =>{
     <>
     <Navbar signOut={signOut} user={user} />
     <Routes>
-         <Route path="/" element={<h2>Sign In Or Sign Up</h2>} />
-
-        
+         <Route path="/topRated" element={<TopRated/>} />
         <Route path="/signup" element={<SignUp logIn={logIn} />} />
         <Route path="/login" element={<LogIn logIn={logIn} />} />
+        <Route path="/allCoffee" element={<CoffeeList user={user}/>} />
         <Route path="/addCoffee" element={<AddCoffee user={user}/>} />
+        
 
     </Routes>
 

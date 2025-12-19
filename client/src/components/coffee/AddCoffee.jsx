@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { BASEURL } from "../../services/contants";
 
 const AddCoffee = (props) => {
-
+const navigate = useNavigate();
   //Enums from CoffeeBean Model
   const coffeeRoaster = [
     "Counter Culture Coffee",
@@ -66,6 +67,8 @@ const AddCoffee = (props) => {
         },
       });
       console.log("Coffee added:", res.data);
+      e.target.reset(); //clear all fields
+       navigate('/allCoffee');
     } catch (error) {
       console.log(`handleAdd Error:`, error);
     }
