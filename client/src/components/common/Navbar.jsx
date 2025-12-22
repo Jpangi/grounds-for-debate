@@ -15,12 +15,13 @@ const Navbar = (props) => {
                         </li>
                         <li><Link to={'/topRated'}>Community Favorites</Link></li>
                         <li><Link to={'/allCoffee'}>My Coffee List</Link></li>
-                        <li><Link to={'/addCoffee'}>Add Beans</Link></li>
+                        <li><Link to={'/addCoffee'}>Add Coffee</Link></li>
+                        
                     </>
                 ) : (
                     <>
                         <li><Link to={'/topRated'}>Community Favorites</Link></li>
-                        <li><Link to={'/login'}>Sign In</Link></li>
+                        <li><Link to={'/'}>Sign In</Link></li>
                         <li><Link to={'/signup'}>Sign Up</Link></li>
                     </>
                 )}
