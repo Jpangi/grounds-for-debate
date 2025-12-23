@@ -74,8 +74,6 @@ const navigate = useNavigate();
 
 
 
-
-
   const handleEdit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target); //put all the form data in the variable called 'formData'

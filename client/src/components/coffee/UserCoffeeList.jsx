@@ -24,22 +24,24 @@ const CoffeeList = (props) => {
     }
   };
 
+
   return (
     <>
       <h1>List of Coffee Beans</h1>
       <section>
         {coffeeList.map((beans) => {
           return (
-            <>
+            
               <ul key={beans._id}>
                 <li>
-                  Name of Beans:
-                  <Link to={`/coffee/${beans._id}`}> {beans.description}</Link>
+                  Name of Beans: 
+                    {beans.description}
                 </li>
                 <li>Roaster: {beans.name}</li>
                 <li>Rating: {beans.rating}/5</li>
+                <Link to={`/coffee/${beans._id}`}><button>Details</button></Link>
               </ul>
-            </>
+            
           );
         })}
       </section>

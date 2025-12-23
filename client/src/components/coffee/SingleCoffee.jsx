@@ -7,7 +7,7 @@ import { useNavigate, Link } from "react-router";
 const SingleCoffee = (props)=>{
 const [singleCoffee, setSingleCoffee] = useState([])
 const { coffeeId } = useParams(); // ← Get ID from URL
-
+const navigate = useNavigate()
 
 useEffect(()=>{
     getSingleCoffee()
@@ -29,6 +29,21 @@ const getSingleCoffee = async()=>{
     }
   };
 
+
+  const handleDelete = async (id) => {
+    try {
+      const res = await axios.delete(`${BASEURL}coffee/${coffeeId}`, {
+        headers: {
+          Authorization: `Bearer ${props.user}`,
+        },
+      });
+      navigate("/allCoffee")
+      console.log("coffee deleted successful", singleCoffee);
+    } catch (error) {
+        console.log('error with deleting coffee', error)
+    }
+  };
+
     return (
       <>
         <h1>{singleCoffee.name}</h1>
@@ -46,6 +61,7 @@ const getSingleCoffee = async()=>{
           </>
         </section>
         <Link to={`/coffee/${singleCoffee._id}/edit`}><button> Edit</button></Link>
+        <button type="button" onClick={()=> handleDelete(singleCoffee._id)}> Delete</button>
       </>
     );
 }
