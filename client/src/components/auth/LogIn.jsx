@@ -29,7 +29,7 @@ const navigate = useNavigate();
       //logIn function is passed as a prop from the app.jsx page
       props.logIn(res.data.token);
       console.log("Submit succeeded");
-      navigate("/allCoffee");
+      navigate("/topRated");
     } catch (error) {
       console.log(error);
     }

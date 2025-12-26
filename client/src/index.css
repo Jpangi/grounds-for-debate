@@ -1,0 +1,317 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #FAF0E6 0%, #F5E6D3 100%);
+  color: #3E2723;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: #3E2723;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1.5rem 0;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+nav {
+  background: linear-gradient(135deg, #3E2723 0%, #4E342E 100%);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+nav li a {
+  color: #FFFBF5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: block;
+}
+
+nav li a:hover {
+  background: rgba(255, 251, 245, 0.1);
+  color: #E8DCC4;
+}
+
+/* Main Content Container */
+main,
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Forms */
+form {
+  background: #FFFBF5;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(62, 39, 35, 0.08);
+  border: 1px solid #E8DCC4;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+form label {
+  display: block;
+  color: #3E2723;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+form label:first-of-type {
+  margin-top: 0;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #E8DCC4;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  background: #FAF0E6;
+  color: #3E2723;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #D2691E;
+  background: #FFFBF5;
+  box-shadow: 0 0 0 4px rgba(210, 105, 30, 0.1);
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+  color: #FFFBF5;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+  font-family: 'Inter', sans-serif;
+  margin-top: 1rem;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(210, 105, 30, 0.4);
+  background: linear-gradient(135deg, #B8571B 0%, #B8732D 100%);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+form button[type="submit"] {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* Coffee Cards */
+.coffee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.coffee-card {
+  background: #FFFBF5;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 16px rgba(62, 39, 35, 0.08);
+  border: 1px solid #E8DCC4;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.coffee-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(210, 105, 30, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.coffee-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(62, 39, 35, 0.15);
+  border-color: #D2691E;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+section > ul {
+  background: #FFFBF5;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 16px rgba(62, 39, 35, 0.08);
+  border: 1px solid #E8DCC4;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+section > ul:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.12);
+}
+
+li {
+  color: #5D4037;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+li strong {
+  color: #3E2723;
+  font-weight: 500;
+}
+
+/* Links in cards/lists */
+section a {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+section a button {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+/* Auth Pages */
+main > h1 {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+
+/* Loading State */
+div:has(> :only-child:is(h1, p):last-child) {
+  text-align: center;
+  padding: 3rem;
+  color: #5D4037;
+}
+
+/* Detail Page Styles */
+section > h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  .coffee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main,
+  section {
+    padding: 1rem;
+  }
+}
+
+/* Rating Display */
+.rating {
+  color: #D2691E;
+  font-weight: 600;
+}
+
+/* Better spacing for detail pages */
+section > ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #E8DCC4;
+}
+
+section > ul li:last-child {
+  border-bottom: none;
+} 
+

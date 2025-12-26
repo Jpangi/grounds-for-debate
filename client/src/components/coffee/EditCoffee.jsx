@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 
 const EditCoffee = (props) => {
-const {coffeeId} = useParams();
+const {coffeeId} = useParams(); //allows me to use the coffeeid in the params in my function
 const navigate = useNavigate();
   //Enums from CoffeeBean Model
   const coffeeRoaster = [
