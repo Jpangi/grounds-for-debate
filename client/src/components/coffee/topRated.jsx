@@ -20,14 +20,14 @@ function TopRated() {
         console.error(err);
       }
     };
-//in my map function you must use averageRating instead of rating and _id instead of name since that's what the variable is on the backend Aggregate method (publicCoffeeController)
+
   return (
-        <div>
+        <div className="top-rated-page">
             <h2>Community Favorites</h2>
             {topRated.map((coffee) => (
-                <div key={coffee._id}>
+                <div key={coffee._id} className="coffee-card-simple">
                     <h3>{coffee._id}</h3>
-                    <p>Rating: {coffee.averageRating}</p>
+                    <p>Rating: {coffee.averageRating}/5</p>
                     <p>Total Ratings: {coffee.totalRatings}</p>
                 </div>
             ))}

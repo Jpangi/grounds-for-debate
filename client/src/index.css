@@ -315,3 +315,59 @@ section > ul li:last-child {
   border-bottom: none;
 } 
 
+/* Top Rated Coffee Styles */
+
+/* Main container for the whole page */
+.top-rated-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* The main title at the top */
+.top-rated-page h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #3E2723;
+  margin-bottom: 2rem;
+}
+
+/* Each individual coffee card */
+.coffee-card-simple {
+  background: #FFFBF5;
+  border: 2px solid #E8DCC4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* When you hover over a card, it lifts up */
+.coffee-card-simple:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
+  border-color: #D2691E;
+}
+
+/* The coffee name (h3) */
+.coffee-card-simple h3 {
+  color: #3E2723;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #E8DCC4;
+  padding-bottom: 0.5rem;
+}
+
+/* The rating and total ratings text (p tags) */
+.coffee-card-simple p {
+  color: #5D4037;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Make the rating number stand out */
+.coffee-card-simple p:first-of-type {
+  font-weight: 600;
+  color: #D2691E;
+  font-size: 1.1rem;
+}
