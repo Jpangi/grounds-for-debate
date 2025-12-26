@@ -35,7 +35,6 @@ const singleCoffee = async (req, res) => {
     res.status(400), json({ message: "error finding coffee bean", error });
   }
 };
-
 //function to update a coffee bean
 const updateCoffee = async (req, res) => {
   try {
