@@ -31,7 +31,7 @@ const SignUp = (props)=>{
         //logIn function is passed as a prop from the app.jsx page
         props.logIn(res.data.token);
         console.log('Submit succeeded')
-        Navigate("/home");
+        Navigate("/topRated");
       } catch (error) {
         console.log(error);
       }
