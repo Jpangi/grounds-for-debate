@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://grounds-for-debate.onrender.com/", // exact frontend URL
+    origin: "https://grounds-for-debate.onrender.com", // exact frontend URL
     credentials: true,
   })
 );
