@@ -27,7 +27,7 @@ const SignUp = (props)=>{
 
       try {
         //make a call to the backend to sign up
-        const res = await axios.post(`${BASEURL}users/signup`, formData);
+        const res = await axios.post(`${BASEURL}/users/signup`, formData);
         //logIn function is passed as a prop from the app.jsx page
         props.logIn(res.data.token);
         console.log('Submit succeeded')

@@ -14,7 +14,7 @@ useEffect(()=>{
 
 const getSingleCoffee = async()=>{
     try {
-      const res = await axios.get(`${BASEURL}coffee/${coffeeId}`, {
+      const res = await axios.get(`${BASEURL}/coffee/${coffeeId}`, {
         headers: {
           Authorization: `Bearer ${user}`,
         },
@@ -33,7 +33,7 @@ const getSingleCoffee = async()=>{
       return;
     }
     try {
-      const res = await axios.delete(`${BASEURL}coffee/${coffeeId}`, {
+      const res = await axios.delete(`${BASEURL}/coffee/${coffeeId}`, {
         headers: {
           Authorization: `Bearer ${user}`,
         },

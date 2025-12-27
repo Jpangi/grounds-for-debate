@@ -16,7 +16,7 @@ const CoffeeList = (props) => {
 
   const getCoffeeList = async () => {
     try {
-      const res = await axios.get(`${BASEURL}coffee/allCoffee`, {
+      const res = await axios.get(`${BASEURL}/coffee/allCoffee`, {
         headers: {
           Authorization: `Bearer ${props.user}`,
         },

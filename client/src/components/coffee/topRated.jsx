@@ -13,7 +13,7 @@ function TopRated() {
 
     const getTopRated = async () => {
       try {
-        const res = await axios.get(`${BASEURL}public/topRated`);
+        const res = await axios.get(`${BASEURL}/public/topRated`);
         setTopRated(res.data);
         console.log("Top rated coffees:", res.data);
       } catch (err) {

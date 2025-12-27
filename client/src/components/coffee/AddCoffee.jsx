@@ -61,7 +61,7 @@ const navigate = useNavigate();
     };
     
     try {
-      const res = await axios.post(`${BASEURL}coffee/addCoffee`, data, {
+      const res = await axios.post(`${BASEURL}/coffee/addCoffee`, data, {
         headers: {
           Authorization: `Bearer ${props.user}`,
         },
