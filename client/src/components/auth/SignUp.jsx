@@ -5,6 +5,7 @@ import { BASEURL } from "../../services/contants";
 
 
 const SignUp = (props)=>{
+  const navigate = useNavigate()
     //keeping track of sign up state
     const [formData, setFormData] = useState({
         username:'',
@@ -31,7 +32,7 @@ const SignUp = (props)=>{
         //logIn function is passed as a prop from the app.jsx page
         props.logIn(res.data.token);
         console.log('Submit succeeded')
-        Navigate("/topRated");
+        navigate("/topRated");
       } catch (error) {
         console.log(error);
       }
