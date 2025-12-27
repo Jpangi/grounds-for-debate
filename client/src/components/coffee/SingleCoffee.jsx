@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BASEURL } from "../../services/contants";
+import { BASEURL } from "../../constants/contants";
 import { useParams } from "react-router";
 import { useNavigate, Link } from "react-router";
 

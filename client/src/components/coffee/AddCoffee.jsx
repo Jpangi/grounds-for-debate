@@ -1,50 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { BASEURL } from "../../services/contants";
+import { BASEURL } from "../../constants/contants";
+import { 
+  coffeeRoaster, 
+  region, 
+  flavor_profile, 
+  roast, 
+  rating,
+} from "../../constants/contants"
 
 const AddCoffee = (props) => {
 const navigate = useNavigate();
-  //Enums from CoffeeBean Model
-  const coffeeRoaster = [
-    "Counter Culture Coffee",
-    "Intelligentsia Coffee",
-    "Blue Bottle Coffee",
-    "Stumptown Coffee Roasters",
-    "Verve Coffee Roasters",
-    "Onyx Coffee Lab",
-    "Heart Coffee Roasters",
-    "Irving Farm Coffee Roasters",
-    "Paradise Roasters",
-    "Bird Rock Coffee Roasters",
-    "Novo Coffee",
-    "Devoción",
-    "Ritual Coffee Roasters",
-    "Madcap Coffee",
-    "JBC Coffee Roasters",
-    "Temple Coffee",
-    "La Colombe",
-    "Philz Coffee",
-    "Starbucks",
-    "Peet's Coffee",
-  ];
-  const region = [
-    "Africa",
-    "Asia",
-    "Central America",
-    "South America",
-    "Caribbean",
-  ];
-  const flavor_profile = [
-    "Fruity",
-    "Nutty",
-    "Chocolatey",
-    "Floral",
-    "Spicy",
-    "Earthy",
-  ];
-  const roast = ["Light", "Medium", "Medium-Dark", "Dark"];
-  const rating = [1, 2, 3, 4, 5];
+
 
   const handleAdd = async (e) => {
     e.preventDefault();

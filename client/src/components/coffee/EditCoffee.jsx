@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router";
-import { BASEURL } from "../../services/contants";
+import { BASEURL } from "../../constants/contants";
 import { useState, useEffect } from "react";
 
 
@@ -55,7 +55,7 @@ const navigate = useNavigate();
    useEffect(() => {
         const fetchCoffee = async () => {
             try {
-                const res = await axios.get(`${BASEURL}coffee/${coffeeId}`, {
+                const res = await axios.get(`${BASEURL}/coffee/${coffeeId}`, {
                     headers: {
                         Authorization: `Bearer ${props.user}`,
                     },
@@ -89,7 +89,7 @@ const navigate = useNavigate();
     };
     
     try {
-      const res = await axios.put(`${BASEURL}coffee/${coffeeId}`, data, {
+      const res = await axios.put(`${BASEURL}/coffee/${coffeeId}`, data, {
         headers: {
           Authorization: `Bearer ${props.user}`,
         },

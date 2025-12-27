@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import axios from 'axios';
-import { BASEURL } from "../../services/contants";
+import { BASEURL } from "../../constants/contants";
 
 
 const LogIn = (props)=>{

@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BASEURL } from "../../services/contants";
+import { BASEURL } from "../../constants/contants";
 import { useNavigate, Link } from "react-router";
 import SingleCoffeeSideBar from "./SingleCoffeeSideBar";
 
-const CoffeeList = (props) => {
+const CoffeeList = ({ user}) => {
   const [coffeeList, setCoffeeList] = useState([]);
 
   const [selectedCoffeeId, setSelectedCoffeeId] = useState(null);
@@ -18,7 +18,7 @@ const CoffeeList = (props) => {
     try {
       const res = await axios.get(`${BASEURL}/coffee/allCoffee`, {
         headers: {
-          Authorization: `Bearer ${props.user}`,
+          Authorization: `Bearer ${user}`,
         },
       });
       console.log("get coffee list succeeded");
@@ -77,7 +77,7 @@ const CoffeeList = (props) => {
       {isSidebarOpen && selectedCoffeeId && (
         <SingleCoffeeSideBar
           coffeeId={selectedCoffeeId}
-          user={props.user}
+          user={user}
           onClose={handleCloseSidebar}
           onDeleteSuccess={handleDeleteSuccess}
         />
