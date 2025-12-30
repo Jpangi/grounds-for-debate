@@ -91,7 +91,7 @@ const styles = {
     top: 0,
     width: '400px',
     height: '100vh',
-    backgroundColor: '#fff',
+    backgroundColor: '#ede0d4',
     boxShadow: '-2px 0 10px rgba(0,0,0,0.1)',
     overflowY: 'auto',
     zIndex: 1000,

@@ -10,8 +10,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #8B6F47 0%, #A0826D 50%, #B8956F 100%);
-  color: #FFF8E7;
+  background: #ede0d4;
+  color: #7f5539;
   min-height: 100vh;
   text-align: center;
   display: flex;
@@ -30,14 +30,14 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #7f5539;
 }
 
 h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #FFEDC8;
+  color: #7f5539;
 }
 
 h2 {
@@ -46,26 +46,26 @@ h2 {
   font-weight: 600;
   position: relative;
   padding-bottom: 0.5rem;
-  color: #FFEDC8;
+  color: #7f5539;
 }
 
 h3 {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
-  color: #FFEDC8;
+  color: #7f5539;
 }
 
 /* Navigation */
 nav {
-  background: rgba(93, 64, 55, 0.95);
+  background: #7f5539;
   backdrop-filter: blur(10px);
   padding: 1.2rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(127, 85, 57, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 2px solid rgba(255, 237, 200, 0.2);
+  border-bottom: 2px solid #9c6644;
   width: 100%;
 }
 
@@ -81,7 +81,7 @@ nav ul {
 }
 
 nav li a {
-  color: #FFF8E7;
+  color: #ede0d4;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -92,8 +92,8 @@ nav li a {
 }
 
 nav li a:hover {
-  background: rgba(255, 237, 200, 0.15);
-  color: #FFEDC8;
+  background: rgba(237, 224, 212, 0.15);
+  color: #e6ccb2;
   transform: translateY(-2px);
 }
 
@@ -111,12 +111,12 @@ section {
 
 /* Forms */
 form {
-  background: rgba(139, 111, 71, 0.4);
+  background: #e6ccb2;
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 237, 200, 0.3);
+  box-shadow: 0 8px 32px rgba(127, 85, 57, 0.2);
+  border: 1px solid #ddb892;
   max-width: 600px;
   width: 100%;
   margin: 2rem auto;
@@ -124,7 +124,7 @@ form {
 
 form label {
   display: block;
-  color: #FFF8E7;
+  color: #7f5539;
   font-weight: 500;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
@@ -141,39 +141,39 @@ form select,
 form textarea {
   width: 100%;
   padding: 0.9rem 1.2rem;
-  border: 2px solid rgba(255, 237, 200, 0.3);
+  border: 2px solid #ddb892;
   border-radius: 12px;
   font-size: 0.95rem;
   font-family: 'Inter', sans-serif;
-  background: rgba(139, 111, 71, 0.3);
-  color: #FFF8E7;
+  background: #ede0d4;
+  color: #7f5539;
   transition: all 0.3s ease;
 }
 
 form input::placeholder,
 form select::placeholder,
 form textarea::placeholder {
-  color: rgba(255, 248, 231, 0.5);
+  color: rgba(127, 85, 57, 0.5);
 }
 
 form input:focus,
 form select:focus,
 form textarea:focus {
   outline: none;
-  border-color: #FFEDC8;
-  background: rgba(139, 111, 71, 0.4);
-  box-shadow: 0 0 0 4px rgba(255, 237, 200, 0.1);
+  border-color: #b08968;
+  background: #e6ccb2;
+  box-shadow: 0 0 0 4px rgba(176, 137, 104, 0.1);
 }
 
 form select option {
-  background: #8B6F47;
-  color: #FFF8E7;
+  background: #e6ccb2;
+  color: #7f5539;
 }
 
 /* Buttons */
 button {
-  background: linear-gradient(135deg, #D4A574 0%, #C8956D 100%);
-  color: #2E1A1A;
+  background: linear-gradient(135deg, #9c6644 0%, #b08968 100%);
+  color: #ede0d4;
   border: none;
   padding: 0.75rem 1.8rem;
   border-radius: 25px;
@@ -181,15 +181,15 @@ button {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+  box-shadow: 0 4px 15px rgba(127, 85, 57, 0.3);
   font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
 button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
-  background: linear-gradient(135deg, #C89464 0%, #B8855D 100%);
+  box-shadow: 0 6px 20px rgba(127, 85, 57, 0.4);
+  background: linear-gradient(135deg, #7f5539 0%, #9c6644 100%);
 }
 
 button:disabled {
@@ -214,12 +214,12 @@ form button[type="submit"] {
 }
 
 .coffee-card {
-  background: rgba(139, 111, 71, 0.4);
+  background: #e6ccb2;
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 1.8rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 237, 200, 0.3);
+  box-shadow: 0 8px 32px rgba(127, 85, 57, 0.2);
+  border: 1px solid #ddb892;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -234,14 +234,14 @@ form button[type="submit"] {
   right: -50%;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, rgba(255, 237, 200, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(176, 137, 104, 0.1) 0%, transparent 70%);
   border-radius: 50%;
 }
 
 .coffee-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: #FFEDC8;
+  box-shadow: 0 12px 40px rgba(127, 85, 57, 0.3);
+  border-color: #b08968;
 }
 
 /* Lists */
@@ -250,12 +250,12 @@ ul {
 }
 
 section > ul {
-  background: rgba(139, 111, 71, 0.4);
+  background: #e6ccb2;
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 1.8rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 237, 200, 0.3);
+  box-shadow: 0 8px 32px rgba(127, 85, 57, 0.2);
+  border: 1px solid #ddb892;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
   width: 100%;
@@ -264,19 +264,19 @@ section > ul {
 
 section > ul:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: #FFEDC8;
+  box-shadow: 0 12px 40px rgba(127, 85, 57, 0.3);
+  border-color: #b08968;
 }
 
 li {
-  color: rgba(255, 248, 231, 0.9);
+  color: #7f5539;
   margin: 0.8rem 0;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
 li strong {
-  color: #FFEDC8;
+  color: #7f5539;
   font-weight: 600;
 }
 
@@ -301,7 +301,7 @@ main > h1 {
 div:has(> :only-child:is(h1, p):last-child) {
   text-align: center;
   padding: 3rem;
-  color: rgba(255, 248, 231, 0.8);
+  color: #7f5539;
 }
 
 /* Detail Page Styles */
@@ -318,34 +318,34 @@ section > h1 {
   top: 0;
   width: 400px;
   height: 100vh;
-  background: linear-gradient(180deg, #8B6F47 0%, #A0826D 100%);
-  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, #e6ccb2 0%, #ddb892 100%);
+  box-shadow: -4px 0 30px rgba(127, 85, 57, 0.3);
   overflow-y: auto;
   z-index: 1000;
   padding: 20px;
-  border-left: 2px solid rgba(255, 237, 200, 0.3);
+  border-left: 2px solid #b08968;
   border-radius: 20px 0 0 20px;
 }
 
 .sidebar h1 {
-  color: #FFEDC8;
+  color: #7f5539;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   padding-right: 40px;
 }
 
 .sidebar ul {
-  background: rgba(139, 111, 71, 0.4);
+  background: rgba(237, 224, 212, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 237, 200, 0.3);
+  border: 1px solid #ddb892;
 }
 
 .sidebar li {
-  color: rgba(255, 248, 231, 0.9);
+  color: #7f5539;
   padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(255, 237, 200, 0.2);
+  border-bottom: 1px solid rgba(176, 137, 104, 0.3);
   text-align: left;
 }
 
@@ -359,8 +359,8 @@ section > h1 {
 
 /* Close button for sidebar */
 button[style*="position: absolute"] {
-  background: rgba(212, 165, 116, 0.3);
-  color: #FFF8E7;
+  background: rgba(156, 102, 68, 0.3);
+  color: #7f5539;
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -373,7 +373,7 @@ button[style*="position: absolute"] {
 }
 
 button[style*="position: absolute"]:hover {
-  background: rgba(212, 165, 116, 0.5);
+  background: rgba(156, 102, 68, 0.5);
   transform: rotate(90deg);
 }
 
