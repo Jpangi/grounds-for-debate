@@ -437,7 +437,7 @@ section > ul li:last-child {
 .top-rated-page h2 {
   text-align: center;
   font-size: 2.5rem;
-  color: #FFEDC8;
+  color: #b08968;
   margin-bottom: 2rem;
 }
 
@@ -460,7 +460,7 @@ section > ul li:last-child {
 }
 
 .coffee-card-simple h3 {
-  color: #FFEDC8;
+  color: #b08968;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid rgba(255, 237, 200, 0.2);
